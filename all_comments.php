@@ -6,6 +6,7 @@
 <body>
 <div id='header'>
 <h2>Список отзывов</h2>
+<img id='img1' src='images/93248146.gif'/>
 </div>
 <div id='content'>
 <?php

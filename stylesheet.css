@@ -64,3 +64,14 @@ margin-top: 100px;
 a {
 text-decoration: none;
 }
+#img1 {
+margin-top: -30px;
+}
+#content1{
+background: #D6CBAB;
+            margin-top: 50px ;
+			margin-bottom: 150px ;
+            width: 1255px;
+            height: 300px;
+			text-align:center;
+			}

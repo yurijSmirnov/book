@@ -22,6 +22,7 @@ $p_chislo_sl3=$_GET['p_chislo_sl3'];
 <body>
 <div id = 'header'>
 <h2>Вас приветствует гостевая книга</h2>
+<img id='img1' src='images/93248146.gif'/>
 </div>
 <div id = 'content'>
       <h2>Заполните поля</h2>

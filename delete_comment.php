@@ -6,8 +6,9 @@
 <body>
 <div id='header'>
 <h2>Вы удалили отзыв</h2>
+<img id='img1' src='images/93248146.gif'/>
 </div>
-<div id='content'>
+<div id='content1'>
 <?php
 //создание коротких имен переменных
 $Number = $_GET['Number'];
