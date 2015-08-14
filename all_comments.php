@@ -44,24 +44,24 @@ $vsegostranic = ceil($kolvo_zapisej / $kolvoradov);
 
 echo "<table id='table2' border=10 CELLSPACING=0 WIDTH=1000 align='center'>
   <tr>
-  <td><a href='vse_otzyvy.php?column=Number&sortirovka=asc&tekstr=$tekstr'>По возрастанию</a></td>
-  <td><a href='vse_otzyvy.php?column=User_name&sortirovka=asc&tekstr=$tekstr'>По возрастанию</a></td>
-  <td><a href='vse_otzyvy.php?column=Email&sortirovka=asc&tekstr=$tekstr'>По возрастанию</a></td>
-  <td><a href='vse_otzyvy.php?column=Homepage&sortirovka=asc&tekstr=$tekstr'>По возрастанию</a></td>
-  <td><a href='vse_otzyvy.php?column=Opinion&sortirovka=asc&tekstr=$tekstr'>По возрастанию</a></td>
-  <td><a href='vse_otzyvy.php?column=Date&sortirovka=asc&tekstr=$tekstr'>По возрастанию</a></td>
-  <td><a href='vse_otzyvy.php?column=adress&sortirovka=asc&tekstr=$tekstr'>По возрастанию</a></td>
+  <td><a href='all_comments.php?column=Number&sortirovka=asc&tekstr=$tekstr'>По возрастанию</a></td>
+  <td><a href='all_comments.php?column=User_name&sortirovka=asc&tekstr=$tekstr'>По возрастанию</a></td>
+  <td><a href='all_comments.php?column=Email&sortirovka=asc&tekstr=$tekstr'>По возрастанию</a></td>
+  <td><a href='all_comments.php?column=Homepage&sortirovka=asc&tekstr=$tekstr'>По возрастанию</a></td>
+  <td><a href='all_comments.php?column=Opinion&sortirovka=asc&tekstr=$tekstr'>По возрастанию</a></td>
+  <td><a href='all_comments.php?column=Date&sortirovka=asc&tekstr=$tekstr'>По возрастанию</a></td>
+  <td><a href='all_comments.php?column=adress&sortirovka=asc&tekstr=$tekstr'>По возрастанию</a></td>
   <td></td>
   <td></td>
   </tr>
   <tr>
-  <td><a href='vse_otzyvy.php?column=Number&sortirovka=desc&tekstr=$tekstr'>По убыванию</a></td>
-  <td><a href='vse_otzyvy.php?column=User_name&sortirovka=desc&tekstr=$tekstr'>По убыванию</a></td>
-  <td><a href='vse_otzyvy.php?column=Email&sortirovka=desc&tekstr=$tekstr'>По убыванию</a></td>
-  <td><a href='vse_otzyvy.php?column=Homepage&sortirovka=desc&tekstr=$tekstr'>По убыванию</a></td>
-  <td><a href='vse_otzyvy.php?column=Opinion&sortirovka=desc&tekstr=$tekstr'>По убыванию</a></td>
-  <td><a href='vse_otzyvy.php?column=Date&sortirovka=desc&tekstr=$tekstr'>По убыванию</a></td>
-  <td><a href='vse_otzyvy.php?column=adress&sortirovka=desc&tekstr=$tekstr'>По убыванию</a></td>
+  <td><a href='all_comments.php?column=Number&sortirovka=desc&tekstr=$tekstr'>По убыванию</a></td>
+  <td><a href='all_comments.php?column=User_name&sortirovka=desc&tekstr=$tekstr'>По убыванию</a></td>
+  <td><a href='all_comments.php?column=Email&sortirovka=desc&tekstr=$tekstr'>По убыванию</a></td>
+  <td><a href='all_comments.php?column=Homepage&sortirovka=desc&tekstr=$tekstr'>По убыванию</a></td>
+  <td><a href='all_comments.php?column=Opinion&sortirovka=desc&tekstr=$tekstr'>По убыванию</a></td>
+  <td><a href='all_comments.php?column=Date&sortirovka=desc&tekstr=$tekstr'>По убыванию</a></td>
+  <td><a href='all_comments.php?column=adress&sortirovka=desc&tekstr=$tekstr'>По убыванию</a></td>
   <td></td>
   <td></td>
   </tr>
@@ -100,60 +100,60 @@ $db->close();
 
 if ($tekstr == 1) {
     echo "<b>1</b>
-          <a href='vse_otzyvy.php?tekstr=2'>2</a>
-          <a href='vse_otzyvy.php?tekstr=3'>3</a>...
-          <a href='vse_otzyvy.php?tekstr=$vsegostranic'>последняя</a>
-          <a href='vse_otzyvy.php?tekstr=2'>следующая</a>";
+          <a href='all_comments.php?tekstr=2'>2</a>
+          <a href='all_comments.php?tekstr=3'>3</a>...
+          <a href='all_comments.php?tekstr=$vsegostranic'>последняя</a>
+          <a href='all_comments.php?tekstr=2'>следующая</a>";
 }
 if ($tekstr == 2) {
-    echo "<a href='vse_otzyvy.php?tekstr=1'>предыдущая</a>
-          <a href='vse_otzyvy.php?tekstr=1'>1</a>
+    echo "<a href='all_comments.php?tekstr=1'>предыдущая</a>
+          <a href='all_comments.php?tekstr=1'>1</a>
           <b>$tekstr</b>
-          <a href='vse_otzyvy.php?tekstr=3'>3</a>
-          <a href='vse_otzyvy.php?tekstr=4'>4</a>...
-          <a href='vse_otzyvy.php?tekstr=$vsegostranic'>последняя</a>
-          <a href='vse_otzyvy.php?tekstr=3'>следующая</a>";
+          <a href='all_comments.php?tekstr=3'>3</a>
+          <a href='all_comments.php?tekstr=4'>4</a>...
+          <a href='all_comments.php?tekstr=$vsegostranic'>последняя</a>
+          <a href='all_comments.php?tekstr=3'>следующая</a>";
 }
 if ($tekstr >= 3 and $tekstr <= $vsegostranic - 2) {
     $tekstr = $tekstr - 1;
-    echo "<a href='vse_otzyvy.php?tekstr=$tekstr'> предыдущая</a>";
+    echo "<a href='all_comments.php?tekstr=$tekstr'> предыдущая</a>";
     $tekstr = $tekstr + 1;
-    echo "<a href='vse_otzyvy.php?tekstr=1'> первая...</a>";
+    echo "<a href='all_comments.php?tekstr=1'> первая...</a>";
 
     for ($i = $tekstr - 2; $i <= $tekstr + 2; $i++) {
         if ($tekstr == $i) {
             echo "<b>$i</b>";
         } else {
-            echo "<a href='vse_otzyvy.php?tekstr=$i'> $i </a>";
+            echo "<a href='all_comments.php?tekstr=$i'> $i </a>";
         }
 
     }
-    echo "<a href='vse_otzyvy.php?tekstr=$vsegostranic'>...последняя</a>";
+    echo "<a href='all_comments.php?tekstr=$vsegostranic'>...последняя</a>";
     $tekstr = $tekstr + 1;
-    echo "<a href='vse_otzyvy.php?tekstr=$tekstr'> следующая</a>";
+    echo "<a href='all_comments.php?tekstr=$tekstr'> следующая</a>";
     $tekstr = $tekstr - 1;
 }
 if ($tekstr > $vsegostranic - 2 and $tekstr < $vsegostranic) {
     $tekstr = $tekstr - 1;
-    echo "<a href='vse_otzyvy.php?tekstr=$tekstr'>предыдущая</a>";
-    echo "<a href='vse_otzyvy.php?tekstr=1'>  первая</a>";
+    echo "<a href='all_comments.php?tekstr=$tekstr'>предыдущая</a>";
+    echo "<a href='all_comments.php?tekstr=1'>  первая</a>";
     $tekstr = $tekstr - 1;
-    echo "<a href='vse_otzyvy.php?tekstr=$tekstr'>... $tekstr</a>";
+    echo "<a href='all_comments.php?tekstr=$tekstr'>... $tekstr</a>";
     $tekstr = $tekstr +1;
-    echo "<a href='vse_otzyvy.php?tekstr=$tekstr'> $tekstr</a>";
+    echo "<a href='all_comments.php?tekstr=$tekstr'> $tekstr</a>";
     $tekstr = $tekstr + 1;
     echo "<b> $tekstr</b></a>";
-    echo "<a href='vse_otzyvy.php?tekstr=$vsegostranic'> $vsegostranic</a>";
-    echo "<a href='vse_otzyvy.php?tekstr=$vsegostranic'> следующая</a>";
+    echo "<a href='all_comments.php?tekstr=$vsegostranic'> $vsegostranic</a>";
+    echo "<a href='all_comments.php?tekstr=$vsegostranic'> следующая</a>";
 }
 if ($tekstr == $vsegostranic) {
     $tekstr = $tekstr - 1;
-    echo "<a href='vse_otzyvy.php?tekstr=$tekstr'> предыдущая</a>";
+    echo "<a href='all_comments.php?tekstr=$tekstr'> предыдущая</a>";
     $tekstr = $tekstr - 1;
-    echo "<a href='vse_otzyvy.php?tekstr=1'>  первая...</a>";
-    echo "<a href='vse_otzyvy.php?tekstr=$tekstr'> $tekstr</a>";
+    echo "<a href='all_comments.php?tekstr=1'>  первая...</a>";
+    echo "<a href='all_comments.php?tekstr=$tekstr'> $tekstr</a>";
     $tekstr = $tekstr + 1;
-    echo "<a href='vse_otzyvy.php?tekstr=$tekstr'> $tekstr</a>";
+    echo "<a href='all_comments.php?tekstr=$tekstr'> $tekstr</a>";
     $tekstr = $tekstr + 1;
     echo "<b> $tekstr</b></a>";
 }
