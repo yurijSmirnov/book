@@ -2,10 +2,15 @@
 $(document).ready(function() {
 	var znachenije_input3,znachenije_user_name,znachenije_e_mail,znachenije_h_omepage,znachenije_o_pinion;
 	var znachenije_input7;
-	
-	
-	
-	
+		
+  
+	if(otvet==1 || !otvet){
+		$('.lemon').fadeOut(2000).fadeIn(6000);}
+	else { 
+		alert("Ну и зря.Смотри он исчезнет и никогда-никогда не появится");	
+        $('.lemon').fadeOut(8000);		
+	}
+			
 	
 	//  функциональность нопки проверить
 $('#input1').click(function(){
@@ -32,6 +37,7 @@ $('#input10').click(function(eventObject){
 	   if(!znachenije_user_name || !znachenije_e_mail || !znachenije_o_pinion || !znachenije_input3){
 		   eventObject.preventDefault();
 		   alert("Вы  не заполнили все обязательные поля");
+		   exit;
 	   } 
 	   	   
 		  var regVU_name = /^[A-Za-z0-9]+$/;

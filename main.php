@@ -9,6 +9,8 @@ $Red2 = $_GET['Red2'];
 $Red3 = $_GET['Red3'];
 $updater = $_GET['updater'];
 $p_chislo_sl3=$_GET['p_chislo_sl3'];
+$tut=$_GET['tut'];
+$withTut=$_GET['withTut'];
 ?>
 
 <html>
@@ -20,13 +22,14 @@ $p_chislo_sl3=$_GET['p_chislo_sl3'];
   <title>Гостевая книга </title>
 </head>
 <body>
+
 <div id = 'header'>
 <h2>Вас приветствует гостевая книга</h2>
 <img id='img1' src='images/93248146.gif'/>
 </div>
 <div id = 'content'>
       <h2>Заполните поля</h2>
-    <form  id ='my_form' action="your_comment.php" method="GET" enctype = "multipart/form-data">
+	      <form  id ='my_form' action="your_comment.php" method="GET" enctype = "multipart/form-data" >
   <INPUT TYPE="hidden" name="MAX_FILE_SIZE" value="1000000"><!-- макс. размер -->
   		<?php
 		  $chislo1 = rand(1,15); $chislo2 = rand(1,15);
@@ -53,26 +56,57 @@ $p_chislo_sl3=$_GET['p_chislo_sl3'];
 	  var chislo_sl,chislo_sl2,chislo_sl3;
 var result1 =  '<?php echo $Kapcha."<br/>";?>';
 //Обработчик капчи javascript
+var otvet= '<?php echo $tut;?>'
+var redaktor='<?php echo $withTut;?>'
+
+
+var answering,answer,g,c,k;
 var ch3 = '<?php echo $chislo3."<br/>";?>';
 var ch2 = '<?php echo $chislo2."<br/>";?>';
 var ch1 = '<?php echo $chislo1."<br/>";?>';
+
+if (otvet==1 || otvet==2){k=g+c;}
+else{
+     answer = confirm("Лимон крутить будешь?"); 
+     if(answer){
+		 answering=1;}
+    else{
+		 answering=2;}
+}
 document.write(znachenije_input3);
 	  </script>
 	  	  <?php
+		  if (isset($_GET['tut']))
+{
+    $xxx=6+7;
+}
+
+else
+{
+    echo '<script type="text/javascript">';
+    echo 'document.location.href="' . $_SERVER['REQUEST_URI'] . '?tut=" + answering';
+    echo '</script>';
+    exit();
+}
 	  	 echo"
+		 <input type='hidden' name = 'tut' value='$tut'/>
 	<p>Ваш отзыв *<br />		
       <textarea id = 'o_pinion' name='Opinion' rows='6' cols='26'>$Opinion</textarea>
     </p>";	
 /*<label for = 'userfile'>Загрузить файл:</label>
   <input type='file' name='userfile' id='userfile'/>*/
+
   echo"<input id = 'input10' type='submit' value='Отправить отзыв' />";   
     ?>
 </form>
 * - поле обязательное к заполнению
+
 </div>
 <div id='footer'>
+<!--img src="images/6626655.jpg"-->
+
         <div class="lemon">
         </div>
-</div>
+ </div>
 </body>
 </html>

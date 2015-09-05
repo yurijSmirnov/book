@@ -2,6 +2,8 @@
 <head>
     <title>Спасибо!</title>
     <link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+	<script type="text/javascript" src="js/jquery.js"></script> 
+<script type="text/javascript" src="js/Scripts.js"></script> 
 </head>
 <body>
 <div id='header'>
@@ -17,6 +19,10 @@ $Email = $_POST['Email'];
 $Homepage = $_POST['Homepage'];
 $Opinion = $_POST['Opinion'];
 $first = $_GET['first'];
+$tut=$_GET['tut'];
+
+
+
 if (!get_magic_quotes_gpc()) {
     $Number = addslashes($Number);
     $User_name = addslashes($User_name);
@@ -38,13 +44,16 @@ if ($result2) {
     echo "<br/> Произошла ошибка. Отзыв не удалён.";
 }
 echo"
-<a href='all_comments.php?tekstr=1'>
+<a href='all_comments.php?tekstr=1&tut=$tut'>
     <input id='input15' type='submit' value='смотреть все отзывы'> </a>";
 ?>
 </div>
 <div id='footer'>
-<div class="lemon">
+<?php if($tut==1){echo"
+<div class='lemon'>
         </div>
+";} ?>
+
 <h2>Благодарим за использование нашей гостевой книги</h2>
 </div>
 </body>

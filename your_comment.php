@@ -4,6 +4,8 @@ $date = date('H:i, jS F Y');
 <html>
 <head>
 <link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+<script type="text/javascript" src="js/jquery.js"></script> 
+<script type="text/javascript" src="js/Scripts.js"></script> 
     <title>Спасибо!</title>
 </head>
 <body>
@@ -24,6 +26,7 @@ $Kapcha = $_GET['Kapcha'];
 //$tekstr=$_GET['$tekstr'];
 $chislo3 = $_GET['chislo3'];
 $updater = $_GET['updater'];
+$tut=$_GET['tut'];
 if (!$User_name || !$Email ||!$Kapcha || !$Opinion ) {
     echo "<br/><H3>Вы не заполнили все обязатльные поля.<br /><br/>" .
         "Вернитесь на предыдущую страницу и повторите ввод.</H3>
@@ -100,7 +103,7 @@ $text_zaprosa = "SELECT * FROM `users`";
 $result100 = $db->query($text_zaprosa);        ?>
        </div>
 <?php 
-echo "<table id='table1' border=10 CELLSPACING=3 WIDTH=1000 align='center' >
+echo "<table id='table1' border=10 CELLSPACING=3 WIDTH=1000 align='center'  >
       
   <tr>
            <th>User_name</th>
@@ -123,14 +126,19 @@ echo "<table id='table1' border=10 CELLSPACING=3 WIDTH=1000 align='center' >
 </table>";
 $db->close();
 $tekstr=(int)1;
-echo "<a href='all_comments.php?tekstr=$tekstr'>
+echo "<a href='all_comments.php?tekstr=$tekstr&tut=$tut'>
 <input id='input11' type='submit' value='Смотреть все отзывы' /></a>";
 echo ($userfile);
 ?>
 </div>
 <div id='footer'>
-<div class="lemon">
+<?php 
+if($tut==1){echo"
+<div class='lemon'>
         </div>
+";}
+
+		?>
 <h3>Спасибо что оставили запись в нашей гостевой книге</h3>
 </div>
 </body>
